@@ -1,4 +1,5 @@
 const userModel = require("../models/user")
+const EmergencyModel = require("../models/user")
 const bcrypt = require("bcrypt");
 const UserControllers={
     SignUpApi:(request,response) =>{
@@ -115,8 +116,8 @@ const UserControllers={
     },
     SendData:(request,response)=>{
         const body = request.body
-        const {firstName, lastName, email ,password} = body || {};
-        if(!firstName || !lastName || !email || !password){
+        const {Emergency, location, to_Whom ,user_name} = body || {};
+        if(!Emergency || !location || !to_Whom || !user_name){
             response.json({
                 message: "Field is empty",
                 status:false
@@ -124,12 +125,12 @@ const UserControllers={
         }
         else{
         const objToSend={
-            first_name: body.firstName,
-            last_name: body.lastName,
-            email: body.email,
-            password: body.password,
+            user_name: user_name,
+            location: location,
+            emergency: Emergency,
+            department: to_Whom,
         }
-        userModel.create(objToSend,(error,data)=>{
+        EmergencyModel.create(objToSend,(error,data)=>{
             if(error){
                 response.json({
                     message:`Internal Error : ${error}`,

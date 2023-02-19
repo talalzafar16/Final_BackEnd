@@ -12,7 +12,7 @@ router.post('/api/login',UserControllers.LogInApi)
 router.get('/api/user/:Uid',UserControllers.GetData)
 
 // send data
-router.post('/api/user',UserControllers.SendData)
+router.post('/api/SendData',UserControllers.SendData)
 
 //update data
 router.put('/api/user/:Uid',UserControllers.UpdateData)

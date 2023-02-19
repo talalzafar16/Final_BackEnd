@@ -11,5 +11,4 @@ mongoose.connect(DBURI).then((res) =>{console.log("mongo DB connected")}).catch(
 app.use(express.json()); 
 app.use(cors())     
 app.use(router)   
-
 app.listen(PORT, () =>console.log(`Your server is runing on http://localhost:${PORT}`));
