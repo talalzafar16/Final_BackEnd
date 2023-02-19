@@ -1,5 +1,4 @@
-const userModel = require("../models/user")
-const EmergencyModel = require("../models/user")
+const {userModel,EmergencyModel} = require("../models/user")
 const bcrypt = require("bcrypt");
 const UserControllers={
     SignUpApi:(request,response) =>{
