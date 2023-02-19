@@ -2,8 +2,8 @@ const userModel = require("../models/user")
 const bcrypt = require("bcrypt");
 const UserControllers={
     SignUpApi:(request,response) =>{
-        const {userName,email,password}=request.body;
-        if(!userName || !email || !password) {
+        const {userName,email,password,category}=request.body;
+        if(!userName || !email || !password || !category) {
             response.json({
                 message:"required fields are missing",
                 status:false,
@@ -28,7 +28,7 @@ const UserControllers={
                     const hashPass=bcrypt.hashSync(password,10)
                     const objToSend ={
                         user_name:userName,
-                        category:"Users",
+                        category:category,
                         email:email,
                         password:hashPass,
                     }

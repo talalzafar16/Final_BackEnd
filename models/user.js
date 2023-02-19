@@ -1,8 +1,8 @@
 const mongoose=require('mongoose');
 const UserSignUpSchema= mongoose.Schema({
+    email: String,
     user_name: String,
     category:String,
-    email: String,
     password: String,
 })
 
