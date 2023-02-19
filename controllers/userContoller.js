@@ -96,8 +96,7 @@ const UserControllers={
         })
     },
     GetData:(request,response)=>{
-        const {Uid} = request.params;
-        userModel.findById(Uid,(error,data)=>{
+        EmergencyModel.find((error,data)=>{
             if(error){
                 response.json({
                     message:"data not found",

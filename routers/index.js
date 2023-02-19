@@ -9,7 +9,7 @@ router.post('/api/signup',UserControllers.SignUpApi)
 router.post('/api/login',UserControllers.LogInApi)
 
 // get user data
-router.get('/api/user/:Uid',UserControllers.GetData)
+router.get('/api/GetData',UserControllers.GetData)
 
 // send data
 router.post('/api/SendData',UserControllers.SendData)
