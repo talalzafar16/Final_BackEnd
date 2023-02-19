@@ -6,10 +6,10 @@ const mongoose= require('mongoose');
 const router  = require('./routers');
 const DBURI = "mongodb+srv://admin:admin@cluster0.6wqjbin.mongodb.net/?retryWrites=true&w=majority";
 
+app.use(express.json()); 
+app.use(cors())     
 mongoose.connect(DBURI).then((res) =>{
     console.log("mongo DB connected")
-    app.use(express.json()); 
-    app.use(cors())     
     app.use(router)   
 })
 .catch((err) =>console.log("DBerr",err))          
